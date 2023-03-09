@@ -3,7 +3,7 @@ WORKDIR /tmp
 RUN go install github.com/lucat1/statik@latest
 RUN cp $GOPATH/bin/statik /tmp/statik
 
-FROM alpine:edge
+FROM julia:alpine
 RUN apk update && apk add --no-cache texlive-full libreoffice pandoc
 COPY --from=go-builder /tmp/statik /usr/bin/statik
 COPY md2pdf /usr/bin/md2pdf
