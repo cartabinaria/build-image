@@ -1,0 +1,3 @@
+#!/bin/sh -ex
+
+xournalpp -p ${1%.xopp}.pdf $1

@@ -7,4 +7,5 @@ Questo repository contiene i file che servono per la costruzione dell'immagine u
 * pandoc
 * libreoffice
 * asciidoctor
+* xournalpp
 * https://hub.docker.com/_/julia/[julia]
