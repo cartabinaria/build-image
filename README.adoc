@@ -5,7 +5,7 @@ Questo repository contiene i file che servono per la costruzione dell'immagine u
 .L'immagine attualmente contiene:
 * https://github.com/lucat1/statik[Statik]
 * pandoc
+* tectonic
 * libreoffice
 * asciidoctor
 * xournalpp
-* https://hub.docker.com/_/julia/[julia]
