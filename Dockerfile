@@ -1,4 +1,4 @@
-FROM ghcr.io/csunibo/statik:v0.2 as statik
+FROM ghcr.io/csunibo/statik:v0.3 as statik
 
 FROM alpine
 RUN apk add --no-cache tectonic libreoffice pandoc ruby xournalpp git git-lfs
