@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - 'main'
+      - 'new_statik'
   workflow_dispatch:
 
 jobs:
@@ -27,4 +28,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: ghcr.io/csunibo/build-image
+          tags: ghcr.io/csunibo/build-image:new_statik
