@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - 'main'
-      - 'new_statik'
   workflow_dispatch:
 
 jobs:
@@ -23,9 +22,18 @@ jobs:
           registry: ghcr.io
           username: ${{ github.repository_owner }}
           password: ${{ secrets.GITHUB_TOKEN }}
-      - name: Build and push
+
+      - name: Build and push latest on main
+        if: github.ref_name == 'main'
         uses: docker/build-push-action@v3
         with:
           context: .
           push: true
-          tags: ghcr.io/csunibo/build-image:new_statik
+          tags: ghcr.io/csunibo/build-image:latest
+
+      - name: Build and push with ref name
+        uses: docker/build-push-action@v3
+        with:
+          context: .
+          push: true
+          tags: ghcr.io/csunibo/build-image:${{ github.ref_name }}
