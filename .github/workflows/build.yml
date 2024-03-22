@@ -29,11 +29,17 @@ jobs:
         with:
           context: .
           push: true
-          tags: ghcr.io/csunibo/build-image:latest
+          tags: ghcr.io/${{ github.repository }}:latest
+
+      - name: Remove / form github.ref_name
+        run: |
+          a=${{ github.ref_name }}
+          echo "branch_name=${a//\//-}" >> $GITHUB_ENV
 
       - name: Build and push with ref name
         uses: docker/build-push-action@v3
         with:
           context: .
           push: true
-          tags: ghcr.io/csunibo/build-image:${{ github.ref_name }}
+          tags: ghcr.io/${{ github.repository }}:${{ env.branch_name }}
+
