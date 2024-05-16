@@ -1,8 +1,9 @@
 FROM ghcr.io/csunibo/statik:latest as statik
 
 FROM alpine
-RUN apk add --no-cache tectonic libreoffice pandoc ruby xournalpp git git-lfs
+RUN apk add --no-cache tectonic libreoffice pandoc ruby xournalpp git git-lfs ruby-dev build-base
 RUN gem install --no-document asciidoctor-pdf asciidoctor
+RUN apk del ruby-dev build-base
 COPY --from=statik /usr/bin/statik /usr/bin/statik
 COPY md2pdf /usr/bin/md2pdf
 COPY xopp2pdf /usr/bin/xopp2pdf
