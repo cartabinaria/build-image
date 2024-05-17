@@ -1,11 +1,13 @@
 = Immagine OCI per la build dei repository
 
-Questo repository contiene i file che servono per la costruzione dell'immagine utilizzata per buildare i repository delle materie di csunibo.
+Questo repository contiene i file che servono per la costruzione dell'immagine
+utilizzata per buildare i repository delle materie di csunibo.
 
 .L'immagine attualmente contiene:
 * https://github.com/lucat1/statik[Statik]
 * pandoc
 * tectonic
+* typst
 * libreoffice
 * asciidoctor
 * xournalpp
