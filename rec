@@ -4,7 +4,7 @@
 # proper regex implementation. Also note that on linux find does not support
 # -E like on BSDs.
 
-find . -print0 | xargs -0 -P "$(nproc)" -i bash -c 'set -x; (echo {} | grep -qE $2) && (cd $(dirname "$1"); "$3" "$(basename "$1")")' - '{}' "$1" "$2"
+find . -print0 | xargs -r -0 -P "$(nproc)" -i bash -c 'set -x; (echo {} | grep -qE $2) && (cd $(dirname "$1"); "$3" "$(basename "$1")")' - '{}' "$1" "$2"
 
 # for file in $(find . | grep -E "$1"); do
 #   back=$PWD
