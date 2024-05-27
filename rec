@@ -4,8 +4,21 @@
 # proper regex implementation. Also note that on linux find does not support
 # -E like on BSDs.
 
-find . -print0 | xargs -r -0 -P "$(nproc)" -i bash -c 'set -x; (echo {} | { grep -qE $2 || true; }) && (cd $(dirname "$1"); "$3" "$(basename "$1")")' - '{}' "$1" "$2"
+find . -print0 | xargs -r -0 -P "$(nproc)" -i bash -c '
+set -x
+echo {} | grep -E $2 > /dev/null 
+MATCH=$?
 
+if [ $MATCH -eq 0 ]; then
+  cd $(dirname "$1")
+  "$3" "$(basename "$1")"
+elif [ $MATCH -ne 1 ]; then
+  exit 1
+fi
+' - '{}' "$1" "$2"
+
+ # for file in $(find . | grep -E "$1"); do
+ #   back=$PWD
 # for file in $(find . | grep -E "$1"); do
 #   back=$PWD
 #   cd $(dirname $file)
