@@ -16,12 +16,3 @@ elif [ $MATCH -ne 1 ]; then
   exit 1
 fi
 ' - '{}' "$1" "$2"
-
- # for file in $(find . | grep -E "$1"); do
- #   back=$PWD
-# for file in $(find . | grep -E "$1"); do
-#   back=$PWD
-#   cd $(dirname $file)
-#   $2 $(basename $file)
-#   cd $back
-# done
