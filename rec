@@ -1,11 +1,14 @@
-#!/bin/sh -ex
+#!/bin/bash -ex
 
 # The chaining of find and grep was deemded necessary due to find's lack of a
 # proper regex implementation. Also note that on linux find does not support
 # -E like on BSDs.
-for file in $(find . | grep -E "$1"); do
-  back=$PWD
-  cd $(dirname $file)
-  $2 $(basename $file)
-  cd $back
-done
+
+find . -print0 | xargs -0 -i bash -c 'set -x; (echo {} | grep -qE $2) && (cd $(dirname "$1"); "$3" "$(basename "$1")")' - '{}' "$1" "$2"
+
+# for file in $(find . | grep -E "$1"); do
+#   back=$PWD
+#   cd $(dirname $file)
+#   $2 $(basename $file)
+#   cd $back
+# done
