@@ -1,4 +1,4 @@
-#!/bin/bash -ex
+#!/bin/sh -ex
 
 # The chaining of find and grep was deemded necessary due to find's lack of a
 # proper regex implementation. Also note that on linux find does not support
