@@ -10,7 +10,7 @@ MATCH=$?
 
 if [ $MATCH -eq 0 ]; then
   cd "$(dirname "$1")" || exit 1
-  "$3" "$(basename "$1")"
+  $3 "$(basename "$1")"
 elif [ $MATCH -ne 1 ]; then
   exit 1
 fi
