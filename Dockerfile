@@ -25,6 +25,6 @@ COPY md2pdf /usr/bin/md2pdf
 COPY xopp2pdf /usr/bin/xopp2pdf
 COPY rec.sh /usr/bin/rec
 COPY convert.sh /usr/bin/fconvert
-COPY jupyter2html /usr/bin/jupyter2html
+COPY jupyter2html.sh /usr/bin/jupyter2html
 COPY --from=statik /opt/page.gohtml /usr/share/page.gohtml
 COPY --from=statik /opt/style.css /usr/share/style.css
