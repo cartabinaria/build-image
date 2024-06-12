@@ -11,3 +11,4 @@ utilizzata per buildare i repository delle materie di csunibo.
 * libreoffice
 * asciidoctor
 * xournalpp
+* jupyter
