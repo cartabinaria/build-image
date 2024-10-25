@@ -1,4 +1,4 @@
-FROM ghcr.io/csunibo/statik:latest as statik
+FROM ghcr.io/cartabinaria/statik:latest as statik
 
 FROM alpine
 RUN apk add --no-cache \

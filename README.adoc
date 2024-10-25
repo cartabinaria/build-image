@@ -1,10 +1,9 @@
 = Immagine OCI per la build dei repository
 
-Questo repository contiene i file che servono per la costruzione dell'immagine
-utilizzata per buildare i repository delle materie di csunibo.
+Immagine usata per convertire le risorse degli insegnamenti di CartaBinaria.
 
 .L'immagine attualmente contiene:
-* https://github.com/csunibo/statik[Statik]
+* https://github.com/cartabinaria/statik[Statik]
 * pandoc
 * tectonic
 * typst
