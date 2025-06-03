@@ -20,7 +20,7 @@ RUN apk add --no-cache \
     font-noto-emoji \
     font-noto-hebrew \
     font-noto-math \
-    font-noto-symbols \
+    font-noto-symbols
 RUN gem install --no-document asciidoctor-pdf asciidoctor
 RUN python3 -m venv /opt/venv
 RUN /opt/venv/bin/pip install jupyter
