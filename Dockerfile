@@ -15,7 +15,12 @@ RUN apk add --no-cache \
     gcc \
     python3-dev \
     musl-dev \
-    linux-headers
+    linux-headers \
+    font-noto-cjk-extra \
+    font-noto-emoji \
+    font-noto-hebrew \
+    font-noto-math \
+    font-noto-symbols
 RUN gem install --no-document asciidoctor-pdf asciidoctor
 RUN python3 -m venv /opt/venv
 RUN /opt/venv/bin/pip install jupyter
