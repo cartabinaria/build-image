@@ -1,3 +1,27 @@
-#!/bin/sh -ex
+#!/bin/sh
 
+# SPDX-FileCopyrightText: 2022 Luca Tagliavini <luca.tagliavini5@studio.unibo.it>
+# SPDX-FileCopyrightText: 2023 - 2025 Eyad Issa <eyadlorenzo@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-only
+
+# This script converts a Markdown file to PDF using Pandoc and Tectonic.
+# Usage: md2pdf <markdown_file.md>
+
+set -e # Exit on error
+set -u # Treat unset variables as an error
+
+# Check the number of arguments
+if [ "$#" -ne 1 ]; then
+  echo "Usage: $0 <markdown_file.md>"
+  exit 1
+fi
+
+# Check if the input file exists
+if [ ! -f "$1" ]; then
+  echo "Error: File '$1' not found!"
+  exit 1
+fi
+
+set -x # Enable debugging output
 pandoc --pdf-engine=tectonic -t pdf "$1" -o "${1%.md}".pdf
