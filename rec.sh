@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# SPDX-FileCopyrightText: 2022 Luca Tagliavini <luca.tagliavini5@studio.unibo.it>
+# SPDX-FileCopyrightText: 2022 Luca Tagliavini <luca@teapot.ovh>
 #
 # SPDX-License-Identifier: AGPL-3.0-only
 
