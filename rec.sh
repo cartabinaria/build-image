@@ -16,4 +16,6 @@ if [ "$#" -ne 3 ]; then
   exit 1
 fi
 
+set -x # Print commands
 find . -print0 | xargs -r -0 -I{} "$1" '{}' "$2" "$3"
+set +x # Stop printing commands
