@@ -5,7 +5,7 @@
 
 ARG ALPINE_VERSION=3.22
 
-FROM ghcr.io/cartabinaria/statik:latest as statik
+FROM ghcr.io/cartabinaria/statik:latest AS statik
 
 FROM alpine:${ALPINE_VERSION}
 
