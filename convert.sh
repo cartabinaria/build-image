@@ -9,7 +9,6 @@
 # file. It takes 3 arguments: the file path, the regex that needs to match the
 # file and the program used for the conversion.
 
-set -e # Exit on error
 set -u # Treat unset variables as an error
 
 if [ "$#" -ne 3 ]; then
