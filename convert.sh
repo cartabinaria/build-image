@@ -17,7 +17,8 @@ if [ "$#" -ne 3 ]; then
   exit 1
 fi
 
-echo "$1" | grep -E "$2" >/dev/null
+echo "Processing $1..."
+echo "$1" | grep -E "$2"
 MATCH=$?
 
 if [ $MATCH -eq 0 ]; then
@@ -28,5 +29,6 @@ if [ $MATCH -eq 0 ]; then
   set +x # Stop printing commands
 
 elif [ $MATCH -ne 1 ]; then
+  echo "Skipping $1: grep returned an error" >&2
   exit 1
 fi
