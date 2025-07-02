@@ -8,7 +8,7 @@ Immagine usata per convertire le risorse degli insegnamenti di CartaBinaria.
 .L'immagine attualmente contiene:
 * https://github.com/cartabinaria/statik[Statik]
 * pandoc
-* tectonic
+* tectonic (and biber)
 * typst
 * libreoffice
 * asciidoctor

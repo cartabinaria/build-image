@@ -18,6 +18,7 @@ RUN apk add --no-cache \
     ruby \
     ruby-dev \
     tectonic \
+    biber \
     typst \
     xournalpp \
     gcc \
