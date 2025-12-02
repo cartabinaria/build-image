@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 
+# SPDX-FileCopyrightText: 2025 Samuele Musiani <samu@teapot.ovh>
+
 # This script solve the problem of multi-file latex projects. When they compile
 # only the main file is compiled, but it remains inside the directory of the
 # project. We move the main file to the parent directory and rename it to the
