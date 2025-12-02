@@ -9,6 +9,7 @@ import os
 import sys
 import re
 import shutil
+import subprocess
 
 
 def rename_files(regex, target):
@@ -20,6 +21,14 @@ def rename_files(regex, target):
 
         matched_files = [f for f in files if regex.search(f)]
         if len(matched_files) != 1:
+            continue
+
+        result = subprocess.run(
+            ['git', 'status', '--short'], stdout=subprocess.PIPE, cwd=root)
+
+        if f'?? {matched_files[0]}' not in result.stdout.decode('utf-8').splitlines():
+            print("File", matched_files[0],
+                  "is tracked by git, skipping...")
             continue
 
         print("Current directory:", root)
