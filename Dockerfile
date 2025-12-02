@@ -46,3 +46,4 @@ COPY xopp2pdf /usr/bin/xopp2pdf
 COPY rec.sh /usr/bin/rec
 COPY convert.sh /usr/bin/fconvert
 COPY jupyter2html.sh /usr/bin/jupyter2html
+COPY multifile-rename.py /usr/bin/multifile-rename
