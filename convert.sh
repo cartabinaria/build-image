@@ -25,7 +25,9 @@ if [ $MATCH -eq 0 ]; then
 
   set -x # Print commands
   $3 "$(basename "$1")"
+  STATUS=$?
   set +x # Stop printing commands
+  exit "$STATUS"
 
 elif [ $MATCH -ne 1 ]; then
   echo "Skipping $1: grep returned an error" >&2
